@@ -1,0 +1,49 @@
+body, .slideshow, .slide {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+ 
+.slideshow {
+  position: relative;
+  z-index: -1;
+}
+ 
+.slide {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  animation: slideShow 12s infinite;
+  opacity: 0;
+}
+ 
+.slide:nth-child(1) {
+  background-image: url('photo1.jpg');
+  animation-delay: 0s;
+}
+ 
+.slide:nth-child(2) {
+  background-image: url('photo2.jpg');
+  animation-delay: 4s;
+}
+ 
+.slide:nth-child(3) {
+  background-image: url('photo3.jpg');
+  animation-delay: 8s;
+}
+ 
+@keyframes slideShow {
+  0% {opacity: 0}
+  8% {opacity: 1}
+  25% {opacity: 1}
+  33% {opacity: 0}
+  100% {opacity: 0}
+}
+ 
+.content {
+  position: absolute;
+  z-index: 1;
+  /* Здесь можно добавить стили для основного контента сайта */
+}
